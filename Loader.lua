@@ -11,6 +11,8 @@ elseif pId == 2753915549 or pId == 4442272183 or pId == 7449423635 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/realdausita/RubyHub/refs/heads/main/Bloxfruit.lua"))()
 elseif pId == 142823291 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/realdausita/RubyHub/refs/heads/main/mm2.lua"))()
+elseif pId == 13864661000 or pId == 13864667823 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/realdausita/RubyHub/refs/heads/main/BreakIn2.lua"))()
 else
     player:Kick("This Game Is Not Supported by Ruby Hub.")
 end
