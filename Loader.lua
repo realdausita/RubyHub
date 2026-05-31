@@ -9,6 +9,8 @@ elseif pId == 18687417158 or pId == 83645629621104 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/realdausita/RubyHub/refs/heads/main/Forsaken.lua"))()
 elseif pId == 2753915549 or pId == 4442272183 or pId == 7449423635 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/realdausita/RubyHub/refs/heads/main/Bloxfruit.lua"))()
+elseif pId == 142823291 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/realdausita/RubyHub/refs/heads/main/mm2.lua"))()
 else
-    player:Kick("This Game Is Not Supported by Ruby Hub Universal Version Soon..")
+    player:Kick("This Game Is Not Supported by Ruby Hub.")
 end
