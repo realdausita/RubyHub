@@ -13,6 +13,8 @@ elseif pId == 142823291 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/realdausita/RubyHub/refs/heads/main/mm2.lua"))()
 elseif pId == 13864661000 or pId == 13864667823 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/realdausita/RubyHub/refs/heads/main/BreakIn2.lua"))()
+elseif pId == 70876832253163 or pId == 116495829188952 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/realdausita/RubyHub/refs/heads/main/DeadRails.lua"))()
 else
-    player:Kick("This Game Is Not Supported by Ruby Hub.")
+    player:Kick("This Game Is Not Supported by Ruby Hub")
 end
