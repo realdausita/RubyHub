@@ -23,6 +23,8 @@ elseif pId == 72988931267790 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/realdausita/RubyHub/refs/heads/main/DrawASleigh%26SlideDownHill.lua"))()
 elseif pId == 95082159892680 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/realdausita/RubyHub/refs/heads/main/%2B1%20Speed%20Escape%20on%20Keyboard%20Candy%20and%20Chocalete.lua"))()
+elseif pId == 920587237 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/realdausita/RubyHub/refs/heads/main/AdoptMe.lua"))()
 else
     player:Kick("This Game Is Not Supported by Ruby Hub")
 end
