@@ -26,5 +26,5 @@ elseif pId == 95082159892680 then
 elseif pId == 920587237 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/realdausita/RubyHub/refs/heads/main/AdoptMe.lua"))()
 else
-    player:Kick("This Game Is Not Supported by Ruby Hub")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/realdausita/RubyHub/refs/heads/main/Universall.lua"))()
 end
