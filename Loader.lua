@@ -1,7 +1,8 @@
 -- Heya skid
 
+if not game:IsLoaded() then game.Loaded:Wait() end
+
 local pId = game.PlaceId
-local player = game:GetService("Players").LocalPlayer
 
 if pId == 4620170611 or pId == 3851622790 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/realdausita/RubyHub/refs/heads/main/BreakIn.lua"))()
