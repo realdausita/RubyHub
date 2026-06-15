@@ -1,0 +1,66 @@
+-- Right Shift Open/Close
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+
+local Player = Players.LocalPlayer
+local Mouse = Player:GetMouse()
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "CoordTracker"
+ScreenGui.Parent = game:GetService("CoreGui") -- Executor'larda CoreGui'ye eklenir
+
+local MainFrame = Instance.new("Frame")
+MainFrame.Name = "MainFrame"
+MainFrame.Size = UDim2.new(0, 200, 0, 120)
+MainFrame.Position = UDim2.new(0.5, -100, 0.5, -60)
+MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+MainFrame.BorderSizePixel = 0
+MainFrame.Draggable = true -- Sürükleme özelliği
+MainFrame.Active = true
+MainFrame.Parent = ScreenGui
+
+local Title = Instance.new("TextLabel")
+Title.Size = UDim2.new(1, 0, 0, 30)
+Title.Text = "Koordinat Takip"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1
+Title.Parent = MainFrame
+
+local CoordLabel = Instance.new("TextLabel")
+CoordLabel.Size = UDim2.new(1, 0, 0, 40)
+CoordLabel.Position = UDim2.new(0, 0, 0, 30)
+CoordLabel.Text = "X: 0, Y: 0, Z: 0"
+CoordLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+CoordLabel.BackgroundTransparency = 1
+CoordLabel.Parent = MainFrame
+
+local CopyButton = Instance.new("TextButton")
+CopyButton.Size = UDim2.new(0, 150, 0, 30)
+CopyButton.Position = UDim2.new(0.5, -75, 0, 75)
+CopyButton.Text = "Kopyala"
+CopyButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+CopyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CopyButton.Parent = MainFrame
+
+RunService.RenderStepped:Connect(function()
+    if Player.Character and Player.Character:FindFirstChild("HumanoidRootPart") then
+        local pos = Player.Character.HumanoidRootPart.Position
+        CoordLabel.Text = string.format("X: %.1f, Y: %.1f, Z: %.1f", pos.X, pos.Y, pos.Z)
+    end
+end)
+
+CopyButton.MouseButton1Click:Connect(function()
+    local textToCopy = CoordLabel.Text
+    setclipboard(textToCopy) -- Executor destekli pano fonksiyonu
+    CopyButton.Text = "Kopyalandı!"
+    task.wait(1)
+    CopyButton.Text = "Kopyala"
+end)
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if input.KeyCode == Enum.KeyCode.RightShift then
+        MainFrame.Visible = not MainFrame.Visible
+    end
+end)
