@@ -9,7 +9,7 @@ local Mouse = Player:GetMouse()
 
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "CoordTracker"
-ScreenGui.Parent = game:GetService("CoreGui") -- Executor'larda CoreGui'ye eklenir
+ScreenGui.Parent = game:GetService("CoreGui")
 
 local MainFrame = Instance.new("Frame")
 MainFrame.Name = "MainFrame"
@@ -23,7 +23,7 @@ MainFrame.Parent = ScreenGui
 
 local Title = Instance.new("TextLabel")
 Title.Size = UDim2.new(1, 0, 0, 30)
-Title.Text = "Koordinat Takip"
+Title.Text = "Coordinat"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.BackgroundTransparency = 1
 Title.Parent = MainFrame
@@ -39,7 +39,7 @@ CoordLabel.Parent = MainFrame
 local CopyButton = Instance.new("TextButton")
 CopyButton.Size = UDim2.new(0, 150, 0, 30)
 CopyButton.Position = UDim2.new(0.5, -75, 0, 75)
-CopyButton.Text = "Kopyala"
+CopyButton.Text = "Copy"
 CopyButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 CopyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 CopyButton.Parent = MainFrame
@@ -53,10 +53,10 @@ end)
 
 CopyButton.MouseButton1Click:Connect(function()
     local textToCopy = CoordLabel.Text
-    setclipboard(textToCopy) -- Executor destekli pano fonksiyonu
-    CopyButton.Text = "Kopyalandı!"
+    setclipboard(textToCopy)
+    CopyButton.Text = "Copied!"
     task.wait(1)
-    CopyButton.Text = "Kopyala"
+    CopyButton.Text = "Copy"
 end)
 
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
